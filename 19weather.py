@@ -7,10 +7,9 @@ root.geometry("600x100")
 
 
 
-#https://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=89101&distance=5&API_KEY=E6E07835-BF3B-4FAB-BEE0-DA3F19AAB1F0
 def weathersearch():
     try:
-        api_request=requests.get("https://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode="+str(zip_box.get())+"&distance=5&API_KEY=E6E07835-BF3B-4FAB-BEE0-DA3F19AAB1F0")
+        api_request=requests.get("https://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode="+str(zip_box.get())+"&distance=5&API_KEY=Your Own Api Key")
         api=json.loads(api_request.content)
         city=api[0]["ReportingArea"]
         quality=api[0]["AQI"]
